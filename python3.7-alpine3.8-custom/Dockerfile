@@ -125,12 +125,12 @@ RUN set -ex; \
 			\( -type f -a \( -name '*.pyc' -o -name '*.pyo' \) \) \
 		\) -exec rm -rf '{}' +; \
 	rm -f get-pip.py
-#adding bash
+#adding bash and zlib ENV requirments
+ENV LIBRARY_PATH=/lib:/usr/lib
 RUN apk update
 RUN apk upgrade
+RUN apk add build-base python-dev py-pip jpeg-dev zlib-dev
 RUN add bash
 RUN add bash-completion
-RUN apk add build-base python-dev py-pip jpeg-dev zlib-dev
-ENV LIBRARY_PATH=/lib:/usr/lib
 
 CMD ["/bin/bash"]

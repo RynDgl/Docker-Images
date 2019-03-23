@@ -129,8 +129,6 @@ RUN set -ex; \
 ENV LIBRARY_PATH=/lib:/usr/lib
 RUN apk update
 RUN apk upgrade
-RUN apk add build-base python-dev py-pip jpeg-dev zlib-dev
-RUN add bash
-RUN add bash-completion
+RUN apk add build-base python-dev py-pip jpeg-dev zlib-dev bash bash-completion
 
 CMD ["/bin/bash"]

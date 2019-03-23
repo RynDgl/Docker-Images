@@ -125,5 +125,10 @@ RUN set -ex; \
 			\( -type f -a \( -name '*.pyc' -o -name '*.pyo' \) \) \
 		\) -exec rm -rf '{}' +; \
 	rm -f get-pip.py
+#adding bash
+RUN apk update
+RUN apk upgrade
+RUN add bash
+RUN add bash-completion
 
 CMD ["/bin/bash"]

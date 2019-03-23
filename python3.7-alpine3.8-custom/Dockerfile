@@ -130,5 +130,7 @@ RUN apk update
 RUN apk upgrade
 RUN add bash
 RUN add bash-completion
+RUN apk add build-base python-dev py-pip jpeg-dev zlib-dev
+ENV LIBRARY_PATH=/lib:/usr/lib
 
 CMD ["/bin/bash"]

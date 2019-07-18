@@ -1,0 +1,20 @@
+- work on getting GPG key validation from original python3 docker
+hub implimentation && gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$GPG_KEY" \
+&& gpg --batch --verify python.tar.xz.asc python.tar.xz \ \ gnupg
+
+- work on fixing or removing if not necessary the ENV LANG C.UTF-8
+for centos7 python said this was necessary not to break the build
+
+- work on fixing && gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)" \
+for centos7
+
+- work on && export GNUPGHOME="$(mktemp -d)" \ && rm -rf "$GNUPGHOME" python.tar.xz.asc \
+
+- work on building dependencies then removing non necessary packages for centos7 equivilents
+&& apk add --no-cache --virtual .fetch-deps \ && apk del .fetch-deps \
+
+- work on RUN apk add --no-cache ca-certificates centos7 equivilent 
+
+- work on readding $(nproc)
+
+
